@@ -12,8 +12,9 @@ body {
 }
 
 .back {
-    width: 540px;
-    height: 370px;
+    width: 90vw;
+    max-width: 500px;
+    height: auto;
     background: #da6671;
 }
 
@@ -72,8 +73,10 @@ body {
     background: white;
     border: 1px solid #333;
     border-radius: 10px;
-    width: 500px;
-    height: 330px;
+    width: 82vw;
+    max-width: 460px;
+    height: auto;
+    aspect-ratio: 460 / 310;
     top: 20px;
     left: 20px;
     transition: transform 1s ease;
@@ -180,7 +183,7 @@ button.button:active {
     padding: 20px;
     border-radius: 10px;
     position: relative;
-    width: 100%;
+    width: 90vw;
     max-width: 480px;
     text-align: center;
 }
@@ -226,4 +229,68 @@ button.button:active {
     display: flex;
     justify-content: center;
     justify-items: center;
+}
+
+/* Responsive: Dưới 768px (Tablet & Mobile) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .letter {
+        width: 95vw;
+        aspect-ratio: 3 / 2;
+        left: 0;
+        top: 10px;
+    }
+
+    .inner-letter {
+        width: 90%;
+        font-size: 18px;
+        padding: 5px 0;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .letter p {
+        font-size: 13px;
+    }
+
+    .modal-content {
+        width: 95vw;
+        padding: 15px;
+    }
+
+    .modal img {
+        max-height: 60vh;
+    }
+
+    .slider-btn {
+        font-size: 20px;
+        padding: 8px;
+    }
+}
+
+/* Rất nhỏ (dưới 480px, ví dụ điện thoại cũ) */
+@media (max-width: 480px) {
+    .inner-letter {
+        font-size: 16px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+
+    .letter p {
+        font-size: 12px;
+    }
+
+    button.button {
+        width: 22px;
+        height: 22px;
+        border-width: 4px;
+    }
 }
