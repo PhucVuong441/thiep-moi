@@ -19,7 +19,10 @@ const images = [
     'images/6.png',
     'images/7.png',
     'images/8.png',
-    'images/9.png'
+    'images/9.png',
+    'images/10.png',
+    'images/11.png',
+    'images/12.png',
 ];
 let currentImageIndex = 0;
 
