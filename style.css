@@ -1,0 +1,229 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #fff0f0;
+    overflow: hidden;
+}
+
+.envelope {
+    position: relative;
+}
+
+.back {
+    width: 540px;
+    height: 370px;
+    background: #da6671;
+}
+
+.front {
+    position: absolute;
+    border-right: 280px solid #f75e5e;
+    border-top: 195px solid transparent;
+    border-bottom: 175px solid transparent;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 260px;
+    z-index: 3;
+}
+
+.front::before {
+    content: "";
+    position: absolute;
+    border-left: 280px solid #f75e5e;
+    border-top: 195px solid transparent;
+    border-bottom: 175px solid transparent;
+    height: 0;
+    width: 0;
+    top: -195px;
+    left: -260px;
+}
+
+.front::after {
+    content: "";
+    position: absolute;
+    border-bottom: 203px solid #eb576b;
+    border-left: 270px solid transparent;
+    border-right: 270px solid transparent;
+    height: 0;
+    width: 0;
+    top: -28px;
+    left: -260px;
+}
+
+.top {
+    position: absolute;
+    border-top: 203px solid #F67280;
+    border-left: 270px solid transparent;
+    border-right: 270px solid transparent;
+    height: 0;
+    width: 0;
+    top: 0;
+    transform-origin: top center;
+    transform: rotateX(0deg);
+    transition: transform 1s ease;
+    z-index: 3;
+}
+
+.letter {
+    position: absolute;
+    background: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 500px;
+    height: 330px;
+    top: 20px;
+    left: 20px;
+    transition: transform 1s ease;
+    transform: translateY(0);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.letter.expanded {
+    transform: translateY(0) scale(1.05);
+    z-index: 999;
+    transition: transform 0.8s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.inner-letter {
+    font-family: "Adelio Darmanto", cursive;
+    width: 260px;
+    cursor: pointer;
+    color: #e8175d;
+    background: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.text {
+    text-align: center;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    color: black;
+    position: relative;
+    padding: 0 10px;
+}
+
+.letter p {
+    font-family: "Alex Brush", cursive;
+    font-size: 14px;
+    text-align: justify;
+    margin-top: -20px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.welcome .button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.envelope.open .top {
+    transform: rotateX(160deg);
+    transition-delay: 0.05s;
+}
+
+.envelope.open .letter:not(.expanded) {
+    transform: translateY(-120px);
+    transition-delay: 0.9s;
+}
+
+button.button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: transparent;
+    border: 5px solid #e8175d;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+
+button.button:hover {
+    background: rgba(232, 23, 93, 0.1);
+}
+
+button.button:active {
+    transform: scale(0.95);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #fff5f7, #ffe3e3);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 100%;
+    max-height: 50%;
+    border: 1px solid #333;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.modal .slider-btn.prev {
+    left: 10px;
+    width: 50px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.modal .slider-btn.next {
+    right: 10px;
+    width: 50px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
