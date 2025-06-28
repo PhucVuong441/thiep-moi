@@ -11,6 +11,7 @@ let isOpen = false;
 let isExpanded = false;
 
 const images = [
+    'images/Bia.png',
     'images/1.png',
     'images/2.png',
     'images/3.png',
@@ -21,8 +22,7 @@ const images = [
     'images/8.png',
     'images/9.png',
     'images/10.png',
-    'images/11.png',
-    'images/12.png',
+    'images/Ket.png'
 ];
 let currentImageIndex = 0;
 
