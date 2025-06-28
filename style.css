@@ -227,3 +227,81 @@ button.button:active {
     justify-content: center;
     justify-items: center;
 }
+
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .back {
+    width: 320px;
+    height: 220px;
+  }
+
+  .letter {
+    width: 290px;
+    height: 190px;
+    left: 15px;
+    top: 15px;
+    font-size: 12px;
+  }
+
+  .letter p {
+    font-size: 12px;
+    margin-top: -10px;
+  }
+
+  .top {
+    border-top-width: 120px;
+    border-left-width: 160px;
+    border-right-width: 160px;
+  }
+
+  .front {
+    border-right-width: 160px;
+    border-top-width: 110px;
+    border-bottom-width: 110px;
+    left: 160px;
+  }
+
+  .front::before {
+    border-left-width: 160px;
+    border-top-width: 110px;
+    border-bottom-width: 110px;
+    top: -110px;
+    left: -160px;
+  }
+
+  .front::after {
+    border-bottom-width: 120px;
+    border-left-width: 150px;
+    border-right-width: 150px;
+    left: -160px;
+    top: -10px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .modal img {
+    max-height: 200px;
+  }
+
+  .text {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+
+  .inner-letter {
+    width: 200px;
+    font-size: 13px;
+  }
+
+  .button {
+    transform: scale(0.9);
+  }
+}
