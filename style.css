@@ -142,12 +142,12 @@ body {
 }
 
 button.button {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: transparent;
-    border: 5px solid #e8175d;
-    margin-top: 10px;
+    border: 3px solid #e8175d;
+    margin: 10px auto ;
     cursor: pointer;
     padding: 0;
     outline: none;
